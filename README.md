@@ -143,7 +143,7 @@ node server/server.js
 
 Abra o navegador e acesse:
 
-http://localhost:3000
+http://linkfuturo.aqui
 
 ## 🚧 Melhorias futuras
 
