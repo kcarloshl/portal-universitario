@@ -1,29 +1,69 @@
-# Portal Universitário
+# 🎓 Portal Universitário
 
-Sistema web acadêmico desenvolvido como projeto de estudo, com o objetivo de disponibilizar ao aluno acesso às suas informações acadêmicas.
+Sistema web acadêmico desenvolvido como projeto de estudo, utilizando Node.js, Express e MySQL.
 
-## Funcionalidades
+O objetivo é desenvolver um portal no qual estudantes possam realizar login e consultar suas informações acadêmicas de maneira simples e organizada.
 
-- Login do aluno utilizando RA e senha.
-- Autenticação de usuários com senhas protegidas por hash (bcrypt).
-- Controle de sessão.
-- Área restrita do aluno.
-- Consulta de informações acadêmicas.
-- Encerramento de sessão (logout).
-- Layout responsivo para diferentes tamanhos de tela.
+## 📌 Funcionalidades implementadas
 
-## Tecnologias utilizadas
+- [x] Login de alunos utilizando RA e senha.
+- [x] Autenticação com senhas protegidas por hash utilizando bcrypt.
+- [x] Gerenciamento de sessões com express-session.
+- [x] Proteção de acesso à área do aluno.
+- [x] Consulta de informações acadêmicas.
+- [x] Exibição dos dados do aluno após o login.
+- [x] Encerramento de sessão (logout).
+- [x] Interface responsiva para dispositivos móveis.
 
+## 🖥️ Tecnologias utilizadas
+
+**Frontend**
 - HTML5
 - CSS3
 - JavaScript
+
+**Backend**
 - Node.js
-- Express
+- Express.js
+- Express Session
+- Bcrypt
+
+**Banco de dados**
 - MySQL
 - MySQL Workbench
-- Git e GitHub
 
-## Estrutura do projeto
+**Ferramentas**
+- Visual Studio Code
+- Git
+- GitHub
+
+## 🗄️ Banco de dados
+
+O projeto utiliza o banco de dados `portal_universitario`, com a tabela `alunos`.
+
+| Campo | Descrição |
+|---|---|
+| ra | Registro acadêmico do aluno |
+| senha_hash | Senha armazenada em formato de hash |
+| nome | Nome do aluno |
+| curso | Curso matriculado |
+| periodo | Período atual do curso |
+| email | E-mail do aluno |
+| situacao | Situação da matrícula |
+
+O script SQL para criação do banco de dados está disponível no arquivo `portal_universitario.sql`.
+
+## 🔐 Segurança
+
+O projeto utiliza alguns mecanismos básicos de segurança:
+
+- Senhas armazenadas com hash utilizando bcrypt.
+- Autenticação por sessão.
+- Rotas protegidas para impedir o acesso não autenticado à área do aluno.
+- Variáveis de ambiente para armazenar configurações sensíveis.
+- Arquivo `.env` excluído do controle de versão pelo `.gitignore`.
+
+## 📁 Estrutura do projeto
 
 ```text
 portal-universitario/
@@ -44,16 +84,17 @@ portal-universitario/
 ├── portal_universitario.sql
 ├── .gitignore
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
-## Como executar o projeto
+## ⚙️ Como executar o projeto
 
 ### 1. Pré-requisitos
 
 - Node.js instalado.
 - MySQL instalado.
-- MySQL Workbench (opcional, para executar e visualizar o banco de dados).
+- Git instalado.
 
 ### 2. Clonar o repositório
 
@@ -61,7 +102,7 @@ portal-universitario/
 git clone https://github.com/kcarloshl/portal-universitario.git
 ```
 
-### 3. Entrar na pasta do projeto
+### 3. Entrar na pasta
 
 ```bash
 cd portal-universitario
@@ -75,7 +116,7 @@ npm install
 
 ### 5. Configurar o banco de dados
 
-Execute o script `portal_universitario.sql` no MySQL Workbench para criar o banco de dados e a tabela de alunos.
+Execute o arquivo `portal_universitario.sql` no MySQL Workbench.
 
 ### 6. Configurar as variáveis de ambiente
 
@@ -90,7 +131,7 @@ DB_PORT=3306
 SESSION_SECRET=sua_chave_de_sessao
 ```
 
-Substitua os valores pelos dados da sua instalação do MySQL e utilize uma chave própria para a sessão.
+Preencha com as configurações da sua instalação do MySQL e uma chave própria para as sessões.
 
 ### 7. Iniciar o servidor
 
@@ -98,12 +139,28 @@ Substitua os valores pelos dados da sua instalação do MySQL e utilize uma chav
 node server/server.js
 ```
 
-Depois, acesse no navegador:
+### 8. Acessar o sistema
 
-```text
+Abra o navegador e acesse:
+
 http://localhost:3000
-```
 
-## Observações
+## 🚧 Melhorias futuras
 
-Este projeto está em desenvolvimento e poderá receber novas funcionalidades ao longo de sua implementação.
+Algumas funcionalidades que poderão ser implementadas posteriormente:
+
+- Cadastro e gerenciamento de disciplinas.
+- Consulta de notas e frequência.
+- Visualização da grade curricular.
+- Histórico acadêmico.
+- Edição de informações cadastrais.
+
+## 👨‍💻 Autor
+
+Desenvolvido como projeto de estudo na área de desenvolvimento web.
+
+**GitHub:** [@kcarloshl](https://github.com/kcarloshl)
+
+## 📄 Licença
+
+Projeto desenvolvido para fins educacionais.
